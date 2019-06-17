@@ -1,3 +1,6 @@
+"""kullanicidan aldigi km bilgisini
+   mile ceviren program"""
+
 km=float(input("mil bilgisine ulasmak istediginiz km="))
 mil=km*0.62
 print(km,"km","=",mil,"mil")
