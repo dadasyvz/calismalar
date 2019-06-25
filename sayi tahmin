@@ -1,0 +1,17 @@
+"""Bir degiskene 1-10 arasinda bir sayi atayin.Kullanicidan bu sayiyi tahmin etmesini isteyin.
+    Kullanici 5 denemede bilirse 1 yildiz kazansin, 3 denemede bilirse 2 yildiz kazansin, 1 denemede bilirse 3 yildiz kazansin."""
+    
+    tahmin = "5"
+
+if input("1) lütfen 1 ile 10 arasinda bir sayı tahmin edin: ") == tahmin:
+    print("tebrikler ilk denemede bildiniz! \u2605\u2605\u2605")
+elif input("2) bilemediniz. tekrar bir sayı tahmin edin: ") == tahmin:
+    print("tebrikler ikinci denemede bildiniz. \u2605\u2605\u2605\u2605")
+elif input("3) yine olmadı. tekrar bir sayı tahmin edin: ") == tahmin:
+    print("tebrikler üçüncü denemede bildiniz. \u2605\u2605")
+elif input("4) maalesef :( tekrar bir sayı tahmin edin: ") == tahmin:
+    print("tebrikler. dördüncü denemede bildiniz. \u2605\u2605")
+elif input("5) üzgünüz. tekrar bir sayı tahmin edin: ") == tahmin:
+    print("tebrikler. beşinci denemede bildiniz. \u2605")
+else:
+    print("maalesef 5 hakkınızda da sayıyı doğru tahmin edemediniz.")
