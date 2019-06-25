@@ -1,0 +1,23 @@
+"""Kullanicidan 3-18 karakter arasinda bir username olusturmasini isteyin. Eger usernamede rakam varsa, rakam kullanamayacagina dair gerekli uyariyi yapin. Sonrasinda kullanicidan 6 ile 12 karakter araliginda bir parola olusturmasini isteyin. Olusturulan parolanin 6dan kisa ya da uzun olmasi durumlarinda gerekli uyarilari yapin. 
+Iki durumun sartlari da saglaniyorsa username ve parolayi hem ekrana printleyin hem de bir dosyaya kaydedin."""
+
+user=input("3-18 karakter arasinda icinde rakam OLMAYAN! br username olusturunuz=")
+
+if not(3<=len(user)<=18):
+    print("3-18 karakter arasinda bir username olusturunuz!")
+elif ("0" in user) or ("1" in user) or ("2" in user) or ("3" in user) or ("4" in user) or ("5" in user) or ("6" in user) or ("7" in user) or ("8" in user) or ("9" in user):
+    print("username icinde rakam kullanmayiniz!")
+else:
+    parola = input("6-12 karakter arasinda bir parola olusturunuz=")
+    if not (6 <= len(parola) <= 12):
+        print("6-12 karakter arasinda bir parola olusturunuz!")
+    else:
+        print("dosyaya kaydediliyor.....")
+        print("username={}\nparola={}".format(user,parola))
+        dosya=open("kullanici ad-parola.txt","w")
+        print("username={}\nparola={}".format(user,parola),file=dosya)
+        dosya.close()
+
+
+
+
