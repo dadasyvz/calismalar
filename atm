@@ -1,0 +1,25 @@
+"""
+Kullanicinin hesabinda 1000 € olsun. Kullaniciya hangi islemi yapmak istedigini sorun. Kullanicinin yapabilecegi islemler:
+        1-bakiye kontrolu
+        2-para yatirma
+        3-para cekme
+Kulkanicinin secimine gore gerekli islemleri /sorulari devam ettirin ve hesabi guncelleyin.
+
+Kullanici hesabinda olan paradan fazla para cekmek isterse uyarin ve islemi yapamayacagini soyleyin."""
+
+bakiye=1000
+secim=int(input("hangi islemi yapmak istediginizi seciniz\n1-bakiye kontrol\n2-para yatirma\n3-para cekme\n------->"))
+
+if secim==1:
+    print("hesabinizda {} euro para bulunmaktadir".format(bakiye))
+elif secim==2:
+    yatirilan_para=int(input("yatirmak istediginiz rakam="))
+    print("hesabiniza {} euro para yatirildi\nyeni bakiyeniz={}".format(yatirilan_para,bakiye+yatirilan_para))
+elif secim==3:
+    cekilen_tutar=int(input("cekmek istediginiz tutar="))
+    if cekilen_tutar>bakiye:
+        print("bakiyeniz yetersiz!")
+    else:
+        print("hesabinizdan {} euro cekilmistir\nkalan bakiyeniz={}".format(cekilen_tutar,bakiye-cekilen_tutar))
+
+          
