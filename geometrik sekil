@@ -1,0 +1,31 @@
+""" geometrik sekil hesaplama islemi, kullancidan ucgenmi dortgenmi tipini ogrenip, dortgen cevabini verirse 4 kenar isteyip bu dorgeninl karemi
+dikdortgenmi siradan bir dortgenmi olup olmadigi, ucgen cevabinda 3 kenar isteyip ucgenin eskenar,ikizkenar, cesitkenar veya ucgen belirtip belirtmediginin
+kontrolunu saglayan bir program"""
+
+giris=int(input("tipini ogrenmek istediginiz geometrik sekil icin\n1-ucgen\n2-dortgen\n---->"))
+
+if giris==1:
+    kenar1=int(input("ucgenin 1.kenar uzunlugunu giriniz="))
+    kenar2 = int(input("ucgenin 2.kenar uzunlugunu giriniz="))
+    kenar3 = int(input("ucgenin 3.kenar uzunlugunu giriniz="))
+    if not (kenar1+kenar2>kenar3) or not (kenar1+kenar3>kenar2) or not (kenar2+kenar3>kenar1):
+        print("girmis oldugunuz uzunluk olculeri bir ucgen teskil etmiyor!")
+    elif kenar2==kenar3==kenar1:
+        print("bu ucgen eskenar ucgendir!")
+    elif kenar1==kenar2 or kenar1==kenar3 or kenar3==kenar2:
+        print("bu ucgen ikizkenar ucgendir!")
+    else:
+        print("bu ucgen cesitkenar ucgendir!")
+
+elif giris==2:
+    kenar1 = int(input("dortgenin 1.kenar uzunlugunu giriniz="))
+    kenar2 = int(input("dortgenin 2.kenar uzunlugunu giriniz="))
+    kenar3 = int(input("dortgenin 3.kenar uzunlugunu giriniz="))
+    kenar4 = int(input("dortgenin 4.kenar uzunlugunu giriniz="))
+
+    if kenar1==kenar2==kenar3==kenar4:
+        print("girmis oldugunuz olculere sahip olan sekil eskenar dortgen veya karedir!")
+    elif (kenar1==kenar3 and kenar2==kenar4):
+        print("girmis oldugunuz olculere sahip olan sekil bir dikdorgen veya karsilikli kenarlari esit olan bir dortgendir!")
+    else:
+        print("girmis oldugunuz olculere sahip olan sekil bir cesitkenar dortgendir!")
