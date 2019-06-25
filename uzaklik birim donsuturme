@@ -1,0 +1,12 @@
+""" Kullanicadan 2 input alinacak:
+        1-km-mil donusumu mu yapmak istiyor, mil-km donusumu mu yapmak istiyor.
+        2-donusturmek istedigi birimin uzunlugu kactir?
+    Donusum yapilacak birimler mil ve kilometre olacak."""
+    
+    tercih=int(input("donusum yaptirmak istediginiz tercihi seciniz\n1)km-mil\n2)mil-km\n-->"))
+if tercih==1:
+    uzunluk=float(input("mile cevirmek istediginiz kilometre uzunlugunu giriniz="))
+    print("{} km = {} mil".format(uzunluk,uzunluk*0.62))
+elif tercih==2:
+    uzunluk=float(input("kilometreye cevirmek istediginiz mil uzunlugunu yaziniz"))
+    print("{} mil = {} km".format(uzunluk,uzunluk*100/62))
