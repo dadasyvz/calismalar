@@ -1,0 +1,60 @@
+"""Kullanicidan, kullanici adi ve parola olusturarak hesap olusturmasini isteyin. 
+	Bu aldiginiz bilgileri bir dosyaya yazdirin. Her gırıste dosyadakı bılgıler sıfırlanmasın 
+	kayıt bılgılerı dosyaya eklenmeye devam etsın. 
+	Kullanici daha once girilmis olan bir kullanici adiyla hesap olusturmak isterse, bu kullanici 
+	adinin daha once secildigini ve baska bir kullanici adiyla hesap olusturmasini isteyin."""
+  
+  
+  import time
+head="/////////////////////////////////\n" \
+     "1)giris\n" \
+     "2)hesap olusturma\n" \
+     "3)cikis\n" \
+     "-----> "
+
+"""with open("userdata.txt","a") as t:
+    t.write("kullanici bilgileri klasorudur\n")
+    t.close()"""
+
+
+
+while True:
+    giris=input(head)
+    if giris == "1":
+        kullanici_adi=input("kullanici adi=")
+        parola=input("parola=")
+        with open("userdata.txt","r") as k:
+            bilgiler=k.read()
+            if (kullanici_adi in bilgiler) and (parola in bilgiler):
+                print("Aciliyor.....")
+                time.sleep(3)
+                print("hosgeldiniz!")
+                k.close()
+                break
+            else:
+                print("kullanici adi veya parolaniz hatali\ntekrar deneyiniz!")
+                continue
+
+    elif giris=="2":
+        kullanici_adi = input("kullanici adi=")
+        with open("userdata.txt", "r") as r:
+            data = r.read()
+            if kullanici_adi in data:
+                print("girmis oldugunuz kullanici adi kullanilmaktadir!")
+                r.close()
+                continue
+
+            else:
+                with open("userdata.txt", "a") as a:
+                    parola = input("parola")
+                    a.write("\nkullanici adi="+kullanici_adi)
+                    a.write("\nparola=" + parola)
+                    a.close()
+                continue
+
+    elif giris=="3":
+        print("program kapaniyor....")
+        time.sleep(3)
+        break
+
+
