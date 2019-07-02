@@ -1,0 +1,64 @@
+"""Karenin, ucgenin ve diktortgenin alanlarini hesaplayan, kup,kure ve koni seklinde olan cisimlerin hacmini
+	 hesaplayan bir program yazmanizi istiyoruz. 
+	Kullanicidan hangi seklin alanini veya hangi sekildeki cismin hacmini hesaplamak istedigini sormalisiniz ve o 
+	islem icin gereken verileri isteyip hesaplamayi yapmalisiniz. 
+Tum bu islemleri yaparken hata alinabilecek durumlari ongorerek gerekli onlemleri almalisiniz."""
+
+
+head2="1-Alan islemleri\n" \
+     "  a-kare\n" \
+     "  b-ucgen\n" \
+     "  c-dikdortgen\n" \
+      "------->"
+head3="2-Hacim islemleri\n" \
+     "  a-kup\n" \
+     "  b-kure\n" \
+     "  c-koni\n" \
+      "------->"
+
+
+head1="*****Alan-Hacim Hesaplama********\n" \
+     "1-Alan islemleri\n" \
+     "2-Hacim islemleri\n" \
+     "3-cikis\n" \
+      "------->"
+
+while True:
+    secim=int(input(head1))
+
+    if secim==1:
+        secim1=input(head2)
+        if secim1=="a":
+            kare_kenar=int(input("karenin bir kenar uzunlugunu giriniz="))
+            print("alan=",kare_kenar**2)
+            continue
+        elif secim1=="b":
+            ucgen_taban=int(input("ucgenin taban uzunlugunu giriniz="))
+            yukseklik=int(input("ucgenin yuksekligini giriniz="))
+            print("ucgenin alani=",ucgen_taban*yukseklik/2)
+            continue
+        elif secim1=="c":
+            dik1=int(input("dikdortgenin kisa kenar uzunlugu="))
+            dik2=int(input("dikdortgenin uzun kenar uzunlugu="))
+            print("dikdortgenin alani=",dik1*dik2)
+            continue
+
+    elif secim==2:
+        secim2=input(head3)
+        if secim2=="a":
+            kup_kenar=int(input("kupun bir kenar uzunlugu="))
+            print("kupun hacmi=",kup_kenar**3)
+            continue
+        elif secim2=="b":
+            pi=3.14
+            kure_yaricap=int(input("kurenin yaricapi="))
+            print("kurenin hacmi=",4/3*pi*(kure_yaricap**3))
+            continue
+        elif secim2=="c":
+            pi = 3.14
+            koni_yukseklik=int(input("koninin yuksekligi="))
+            koni_yaricap=int(input("koninin yaricapi="))
+            print("koninin hacmi=",1/3*pi*(koni_yaricap**2)*koni_yukseklik)
+            continue
+    elif secim==3:
+        break
