@@ -1,0 +1,36 @@
+"""Ekte gonderilmis olan text dosyasinda 3 takimin futbolcularinin isimleri ve takimlari yer almaktadir. 
+	Sizden 3 tane dosya olusturmanizi
+	ve bu 3 dosyaya futbolculari takimlarina gore ayirmanizi istiyoruz. Ayrica kaynak dosyanin bulunamamasi
+	 durumunda da gerekli uyariyi yapmalisiniz."""
+   
+try:
+    with open("futbolcular.txt", "r",encoding="utf-8") as futbolcular:
+        liste=futbolcular.readlines()
+except FileNotFoundError:
+    print("dosya dizinde bulunamadi!")
+
+else:
+    for i in liste:
+        satir=i.split(",")
+        if "Fenerbahce" in i:
+            with open("Fenerbahce.txt", "a") as fener:
+                fener.write("askim")
+                fener.write(satir[0]+"\n")
+                fener.close()
+        elif "Besiktas" in i:
+            with open("Besiktas.txt", "a") as besiktas:
+                besiktas.write(satir[0]+"\n")
+                besiktas.close()
+        elif "Galatasaray" in i:
+               with open("Galatasaray.txt", "a") as cimbom:
+                 cimbom.write(satir[0]+"\n")
+                 cimbom.close()
+
+        futbolcular.close()
+
+
+
+
+
+
+
