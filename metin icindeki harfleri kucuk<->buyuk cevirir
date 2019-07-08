@@ -1,0 +1,33 @@
+#kullanicinin girmis oldugu metindeki harfleri tercihen kucuk<->buyuk cevirir
+
+import time
+
+head="Yapmak istediginiz metin islemini seciniz:\n" \
+     "Metin icindeki BUYUK harfleri kucuk yapmak icin 1'e\n"\
+      "Metin icindeki kucuk harfleri BUYUK yapmak icin 2'e \n"\
+       "Cikis icin 3'e basiniz--->"
+
+
+
+
+while True:
+    secim = input(head)
+    if secim=="1":
+        metin1=input("ceviri yapmak istediginiz metni giriniz=")
+        cevrilmis_metin=metin1.lower()
+        print("ceviri islemi gerceklestiriliyor....")
+        time.sleep(3)
+        print(cevrilmis_metin)
+
+    elif secim=="2":
+        metin2=input("ceviri yapmak istediginiz metni giriniz=")
+        cevrilmis_metin=metin2.upper()
+        print("ceviri islemi gerceklestiriliyor....")
+        time.sleep(3)
+        print(cevrilmis_metin)
+    elif secim=="3":
+        print("program kapatiliyor....")
+        time.sleep(3)
+        break
+    elif not secim==1 or secim==2 or secim==3:
+        print("Hatali giris yaptiniz!\n")
