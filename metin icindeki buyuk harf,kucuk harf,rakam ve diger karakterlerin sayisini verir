@@ -1,0 +1,40 @@
+#Girilen metindeki büyük harf sayısı, küçük harf sayısı, rakam sayısı ve bunların haricindeki
+#özel karakter sayılarını veren bir program 
+
+import time
+
+head="Girecek olduğunuz metindeki büyük harf sayısı, küçük harf sayısı,\n" \
+     "rakam sayısı ve bunların haricindeki özel karakter sayılarını \n"\
+     "ogrenmek icin 1'e,\n"\
+     "Cikis icin 2'ye basiniz="
+
+
+
+while True:
+    islem=input(head)
+    if islem=="1":
+        metin=input("Metini giriniz=")
+        buyuk_harf = 0
+        kucuk_harf = 0
+        rakam = 0
+        ozel_karakter = 0
+        k=0
+        for i in range(0, len(metin)):
+            if metin[k].isalpha() == False and metin[k].isdigit() == False:
+                ozel_karakter += 1
+            elif metin[k].isdigit() == True:
+                rakam += 1
+            elif metin[k] == metin[k].upper():
+                buyuk_harf += 1
+            elif metin[k] == metin[k].lower():
+                kucuk_harf += 1
+            k += 1
+        print("hesaplaniyor.....")
+        time.sleep(3)
+        print("buyuk harf sayisi={}\nkucuk harf sayisi={}\nrakam sayisi={}\nozel karakter sayisi={}".format(buyuk_harf,kucuk_harf,rakam,ozel_karakter))
+
+
+    elif islem=="2":
+        print("program kapatiliyor....")
+        time.sleep(3)
+        break
