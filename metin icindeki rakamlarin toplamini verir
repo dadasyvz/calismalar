@@ -1,0 +1,28 @@
+"""Girilen metindeki rakamların toplamını veren bir program yazınız. (Kullanıcı rakam girmek zorunda değil.
+farklı karakter girişi de yapabilir.)
+Örnek input = "art12kl4*""""
+
+import time
+
+head="Girecek olduğunuz metindeki rakamlarin toplamini bulmak icin 1'e,\n" \
+      "Cikis icin 2'ye basiniz="
+
+while True:
+    secim=input(head)
+    if secim=="1":
+        metin=input("metni giriniz=")
+        k=0
+        toplam=0
+        for i in range(0,len(metin)):
+            if metin[k].isdigit() == True:
+                toplam+=int(metin[k])
+            k+=1
+
+        print("hesaplaniyor....")
+        time.sleep(3)
+        print("girilen metinde bulunan rakamlarin toplami=",toplam)
+
+    elif secim=="2":
+        print("program sonlandiriliyor...")
+        time.sleep(3)
+        break
