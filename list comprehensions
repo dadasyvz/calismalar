@@ -1,0 +1,28 @@
+# İki liste tanımlayın.
+  # İlk liste 1'den 10'a kadar sayılardan oluşturun.
+  # İkinci listeyi sırasıyla a'dan başlayarak 10 harf ile oluşturun.
+  # İki liste için de döngü kurup, iki listenin elemanlarının bütün kombinasyonlarından oluşan iki yeni liste oluşturun.
+
+  # 3'er elemanli versiyonunda cıktı olarak bu şekilde bir çıktı beklenmektedir:
+
+  # 1. [1a, 1b, 1c, 2a, 2b, 2c, 3a, 3b, 3c]
+  # 2. [a1, a2, a3, b1, b2, b3, c1, c2, c3]
+
+liste1=[i for i in range(10)]
+
+liste2=["a","b","c","d","e","f","g","h","i","j"]
+
+"""for i in liste1:
+    for j in liste2:
+        dongulenmis_liste1.append(str(i)+j)"""
+dongulenmis_liste1=[(j+str(i)) for j in liste2 for i in liste1]
+
+"""for i in liste2:
+    for j in liste1:
+        dongulenmis_liste2.append(i+str(j))"""
+dongulenmis_liste2=[str(j)+i for j in liste1 for i in liste2]
+
+
+print(dongulenmis_liste1)
+print(dongulenmis_liste2)
+
