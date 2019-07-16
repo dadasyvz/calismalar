@@ -1,0 +1,81 @@
+"""
+*TO DO LIST*
+
+-Yapilacaklar listesi ve yapilanlar listesi seklinde iki bos liste olusturun. Kullanicinin yapabilecegi islemler:
+
+    *Yapilacaklar listesine gorev ekleme
+        ->append metodu kullanilsin
+
+    *Yapilacaklar listesinden gorev silme
+        -> del metodu kullanilsin
+
+    *Yapilacaklar listesindeki gorevi yapilanlar listesine atama
+        -> pop metodu kullanilsin
+
+    *Yapilanlar listesini goruntuleme
+
+    *kullanıcı yapılacaklar listesinin içini boşaltma
+        -> clear metodu kullanılsın
+
+-Dongu her basa dondugunde yapilacaklar listesi goruntulensin
+-Her iki liste goruntulenirken liste elemanlari numaralandirilarak verilsin
+    ORN:
+        Yapilacaklar Listesi:
+            1- Python odevini yap.
+            2- Alis-veris yapmaya git.
+            3- Ahmet'i ara.
+
+- Eger yapilacaklar listesi bos ise "Su an yapilacaklar listeniz bos" seklinde bir cikti versin."""
+
+
+head="yapilacaklar listesi\n" \
+     "1-Yapilacaklar listesine gorev ekleme\n" \
+     "2-Yapilacaklar listesinden gorev silme\n" \
+     "3-Yapilacaklar listesindeki gorevi yapilanlar listesine atama\n" \
+     "4-Yapilanlar listesini goruntuleme\n" \
+     "5-kullanıcı yapılacaklar listesinin içini boşaltma\n" \
+     "6-cikis icin q="
+
+
+yapilacaklar_listesi=[]
+yapilanlar_listesi=[]
+while True:
+    k = 1
+    secim=input(head)
+    if secim=="1":
+
+        gorev=input("eklemek istediginiz gorevi giriniz=")
+        yapilacaklar_listesi.append(gorev)
+
+        print(yapilacaklar_listesi)
+    elif secim=="2":
+
+        gorev=input("liste icinden silinecek gorevi seciniz=")
+        gorev=int(gorev)
+        del yapilacaklar_listesi[gorev-1]
+        print(yapilacaklar_listesi)
+
+    elif secim=="3":
+        print(yapilacaklar_listesi)
+        sec=int(input("listeden yapilani seciniz="))
+        x=yapilacaklar_listesi.pop(int(sec)-1)
+        print(x)
+        yapilanlar_listesi.append(x)
+        print(yapilanlar_listesi)
+
+    elif secim=="4":
+        print(yapilanlar_listesi)
+
+    elif secim=="5":
+        yapilacaklar_listesi.clear()
+
+    for i in yapilacaklar_listesi:
+        if yapilacaklar_listesi==[]:
+            print("listeniz bostur")
+            break
+        print("{}-".format(k)+i)
+        k+=1
+
+    for i in yapilanlar_listesi:
+        print("{}".format(k)+i)
+        k+=1
