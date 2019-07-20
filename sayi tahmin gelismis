@@ -27,13 +27,38 @@ while basamak<=4:
         continue
     else:
         sayi.append(a)
+        if sayi[0]==0:
+            sayi.pop(0)
+            basamak=1
+            continue
         basamak+=1
         continue
 
 print(sayi)
 
 while True:
-    tahmin=list(input("4 basamakli bir sayi tahmin ediniz="))
+    tahmin=input("4 basamakli rakamlari farkli bir sayi tahmin ediniz=")
+
+    if tahmin.isdigit()==False:
+        print("sadece rakam kullaniniz!")
+        continue
+
+    tahmin=list(tahmin)
+    k=0
+    while k<len(tahmin):
+        if tahmin.count(tahmin[k])>1:
+            print("her rakami farkli bir sayi giriniz!!!")
+            tahmin=input("4 basamakli rakamlari farkli bir sayi tahmin ediniz=")
+            if tahmin.isdigit() == False:
+                print("sadece rakam kullaniniz!")
+                tahmin = list(input("4 basamakli rakamlari farkli bir sayi tahmin ediniz="))
+                k=0
+                continue
+            tahmin = list(tahmin)
+            k=0
+            continue
+        else:
+            k+=1
 
     icerik=0
     dogru_yer_tahmin = 0
@@ -55,6 +80,8 @@ while True:
 
     print("+",dogru_yer_tahmin,"  "+"-",(icerik-dogru_yer_tahmin))
     continue
+
+
 
 
 
