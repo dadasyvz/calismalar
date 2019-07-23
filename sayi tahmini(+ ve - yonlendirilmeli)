@@ -1,0 +1,34 @@
+import random
+
+print("Aklinizdan bir sayi tutunuz\n")
+print("Pc'nin tahmin ettigi sayi belirlediginiz sayidan buyukse daha dusuk sayi tahmin edilmeli manasinda \"-\"\n" \
+     "Pc'nin tahmin ettigi sayi kullanicinin belirledigi sayidan kucukse daha buyuk sayi tahmin edilmeli manasinda \"+\" girisi yapiniz\n" \
+     "Pc'nin tahmini dogru oldugunda dogru manasinda \"d\" girisi yapiniz\n")
+
+buyuk_tahminler_listesi = [100]
+kucuk_tahminler_listesi = [0]
+tahmin = random.randint(0, 100)
+adim=0
+print("Aklinizdaki sayiyi bulmaya calisiyorum....")
+
+while True:
+
+    print("Tahminim={}".format(tahmin))
+    kullanici_girisi = input("Sizce?=")
+    if kullanici_girisi == "+":
+        kucuk_tahminler_listesi.append(tahmin)
+        kucuk_tahminler_listesi.sort()
+        tahmin = random.randrange(kucuk_tahminler_listesi[-1] + 1, buyuk_tahminler_listesi[0] - 1)  # liste icinde tekrarlanan buyuk ve kucuk sayilarin
+        adim+=1                                                                                     # tekraren random yapilmasinin engellenmesi icin artilirilip azaltilmistir
+        continue
+
+    elif kullanici_girisi == "-":
+        buyuk_tahminler_listesi.append(tahmin)
+        buyuk_tahminler_listesi.sort()
+        tahmin = random.randrange(kucuk_tahminler_listesi[-1] + 1, buyuk_tahminler_listesi[0] - 1)
+        adim+=1
+        continue
+
+    elif kullanici_girisi=="d":
+        print("Aklinizdaki {} sayisini {} adimda tahmin edebildim...".format(tahmin,adim))
+        break
