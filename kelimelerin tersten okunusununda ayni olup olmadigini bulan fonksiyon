@@ -1,0 +1,18 @@
+def ters(kelime):
+    kelimeler=kelime.split(" ")
+    list=[]
+    for x in kelimeler:
+        a = ""
+        for b in range(len(x)-1,-1,-1):
+            a+=x[b]
+
+        if a==x:
+            list.append(True)
+        else:
+            list.append(False)
+
+    return list
+
+while True:
+    kelimeler=input("tersinden de ayni olup olmadigini ogrenmek istediginiz kelimeler=")
+    print(ters(kelimeler))
