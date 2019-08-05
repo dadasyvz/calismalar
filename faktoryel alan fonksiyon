@@ -1,0 +1,9 @@
+def faktoriyel(x):
+    carpim=1
+    for i in range(1,x+1):
+        carpim*=i
+    return carpim
+
+while True:
+    sayi=int(input("sayi="))
+    print(faktoriyel(sayi))
