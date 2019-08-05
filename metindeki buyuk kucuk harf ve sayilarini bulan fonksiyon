@@ -1,0 +1,17 @@
+def buyuk_kucuk(metin):
+    buyuk=[]
+    kucuk=[]
+    for i in metin:
+        if i.isalpha()!=True:
+            continue
+        elif i.upper()==i:
+            buyuk.append(i)
+
+        elif i.lower()==i:
+            kucuk.append(i)
+
+    return buyuk,kucuk,len(buyuk),len(kucuk)
+
+while True:
+    metin=input("metni giriniz")
+    print(buyuk_kucuk(metin))
