@@ -1,0 +1,8 @@
+def sirala(metin):
+    kelimeler=metin.split("-")
+    kelimeler.sort()
+    print(kelimeler)
+
+while True:
+    metin=input("siralamak istediginiz metni aralara - koyarak yaziniz=")
+    sirala(metin)
