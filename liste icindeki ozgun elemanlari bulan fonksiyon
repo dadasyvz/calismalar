@@ -1,0 +1,5 @@
+def ozgun(x):
+    kume=set(x)
+    return list(kume)
+
+print(ozgun([1,1,2,2,3,4,5,5]))
