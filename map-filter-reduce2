@@ -1,0 +1,19 @@
+'''liste=[(3,4,5),(8,8,17),(6,5,4),(12,11,28)]
+ Listede 3 kenar uzunlugu verilenlerden hangilerinin
+ ucgen teskil edip etmedigini bulan
+ programi filter fonksiyonu yardimi ile tespit ediniz'''
+ 
+ liste=[(3,4,5),(8,8,17),(6,5,4),(12,11,28)]
+
+def ucgenmi(x):
+    if x[0]+x[1]>x[2] and x[0]+x[2]>x[1] and x[1]+x[2]>x[0]\
+        and abs(x[0]-x[1])<x[2] and abs(x[0]-x[2])<x[1]\
+            and abs(x[1]-x[2])<x[0]:
+        return True
+    else:
+        return False
+
+print(list(filter(ucgenmi,liste)))
+
+#tek satirda ise
+# print(list(filter(lambda x: abs(x[0]-x[1])<x[2]<x[0]+x[1],liste)))
