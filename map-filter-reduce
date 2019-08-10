@@ -1,0 +1,15 @@
+'''1)Kasa=[(100,1),(200,5),(350,10),(200,20),(200,50),(100,100),(50,500)] 
+(adet,euro)==>(100 adet 1 euro)
+Kasada bulunan para miktarini map fonksiyonu yardimi ile hesaplayiniz.'''
+
+Kasa=[(100,1),(200,5),(350,10),(200,20),(200,50),(100,100),(50,500)]
+
+def tutar_hesaplama(x):
+    return x[0]*x[1]
+toplam=0
+for i in list(map(tutar_hesaplama,Kasa)):
+    toplam+=i
+print(toplam)
+
+#tek satirda ise
+#print(reduce(lambda x,y:x+y,list(map(lambda x:x[0]*x[1],Kasa))))
