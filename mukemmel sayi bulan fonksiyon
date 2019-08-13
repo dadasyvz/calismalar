@@ -1,14 +1,25 @@
-def mukemmel(sayı):
-    toplam = 0
+def mukemmel(sayi):
+    mukemmeller=[]
+    bolenler=[]
 
-    for i in range(1, sayı):
+    for i in range(1, sayi):
+        toplam = 0
+        bolenler=[]
+        for j in range(1,i):
+            if (i % j == 0):
+                bolenler.append(j)
+        for k in bolenler:
+            toplam+=k
+        if toplam==i:
+            mukemmeller.append(i)
 
-        if (sayı % i == 0):
-            toplam += i
 
-    return toplam == sayı
+    print(mukemmeller)
 
 
-for i in range(1, 1001):
-    if (mukemmel(i)):
-        print("Mükemmel Sayı:", i)
+while True:
+    x=int(input("sayi="))
+    mukemmel(x)
+
+
+
