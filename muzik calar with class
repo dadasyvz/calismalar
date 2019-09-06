@@ -1,0 +1,44 @@
+'''Bir muzik calar objesi yapmanizi istiyoruz. Instance(Object) attribute olarak
+bos bir sarki listesi olusturun. Class methods olarak sarki listesini sifirlama,
+ listeyi goruntuleme, sarki ekleme, sarki silme, sonraki parcayi cal, onceki parcayi cal,
+ karisik cal ozelliklerini ekleyin.'''
+import random
+
+class Muzik_Calar():
+
+    def __init__(self,yeni_sarki):
+        self.sarki_listesi=[]
+        self.sarki_ekleme(yeni_sarki)
+
+
+    def sarkilari_sil(self):
+        self.sarki_listesi.clear()
+        print('sarki listesi silindi')
+
+    def sarkilari_goruntule(self):
+        for i in self.sarki_listesi:
+            print(i)
+
+    def sarki_ekleme(self,yeni_sarki):
+        self.sarki_listesi.append(yeni_sarki)
+        print(yeni_sarki,'eklendi')
+
+    def sarki_silme(self,silinecek_sarki):
+        self.sarki_listesi.remove(silinecek_sarki)
+        print(silinecek_sarki,'silindi')
+
+    def sonraki_parcayi_cal(self,sarki):
+        k=self.sarki_listesi.index(sarki)
+        print('bir sonraki sarki caliniyor..')
+        print('calinan sarki',self.sarki_listesi[k+1])
+
+    def onceki_parcayi_cal(self,sarki):
+        k=self.sarki_listesi.index(sarki)
+        print('bir onceki sarki calinacak')
+        print('calinan sarki',self.sarki_listesi[k-1])
+
+    def karisik_cal(self):
+        print('karisik parca caliniyor ',random.shuffle(self.sarki_listesi))
+
+
+mp=Muzik_Calar('turku')
