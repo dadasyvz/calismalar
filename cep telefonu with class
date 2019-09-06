@@ -1,0 +1,33 @@
+'''Bir cep telefonu objesi yapmanizi istiyoruz. Telefonun marka,
+model, uretim yili, tel nosu ve rehber gibi obje ozelliklerinin
+(instance attributes) olmasini bekliyoruz. Ayrica bu objenin rehbere no ekleme,
+ silme, rehberi goruntuleme, rehberden secilen bir noyu arama(gostermelik)
+  gibi ozelliklerinin (class methods) olmasini istiyoruz.'''
+
+class Telefon():
+
+    def __init__(self,marka,model,uretim_yili,tel_no):
+        self.marka=marka
+        self.model=model
+        self.uretim_yili=uretim_yili
+        self.tel_no=tel_no
+        self.rehber=[]
+        self.no_ekleme()
+
+    def no_ekleme(self):
+        self.rehber.append(self.tel_no)
+        print('numara eklendi')
+
+    def rehber_silme(self,no):
+        self.rehber.remove(no)
+        print('numara silindi')
+
+    @classmethod
+    def goruntule(cls):
+        for i in cls.rehber:
+            print(i)
+
+    def arama(self,no):
+        print(no,'numarasi araniyor')
+
+mobil=telefon('n',15,1996,165)
